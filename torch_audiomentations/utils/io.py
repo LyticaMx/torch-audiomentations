@@ -239,8 +239,8 @@ class Audio:
                 num_samples * original_sample_rate / self.sample_rate
             )
 
-        if original_sample_offset + original_num_samples > original_total_num_samples:
-            raise ValueError()
+        if original_sample_offset + original_num_samples > original_total_num_samples + 1:
+            raise ValueError(file)
 
         if original_samples is None:
             try:
